@@ -17,8 +17,9 @@ public class StepsDefinitions {
         caps.setCapability("platformName", "Android");
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("deviceName", "Small Phone API 36");
-        caps.setCapability("app", "C:\\Users\\rembrandt.ubalde_pra\\Documents\\APPIUM\\General-Store.apk");
 
+        String apkPath = Paths.get("src", "test","java", "resources", "apk", "General-Store.apk").toAbsolutePath().toString();
+        caps.setCapability("app", apkPath);
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723"), caps);
     }
 
